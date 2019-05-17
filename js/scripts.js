@@ -4,10 +4,22 @@ $(document).ready(function() {
     dropRadius: 20,
     perturbance: 0.06
   });
-
+  //navbar
   $(".navbar-toggler").click(function() {
     $(".navbar-toggler").toggleClass("change");
   });
+
+  /* Close Mobile Nav on Click */
+$(document).ready(function () {
+  $(document).click(function (event) {
+    var clickover = $(event.target);
+    var _opened = $('.navbar-collapse').hasClass('show');
+    if (_opened === true && !clickover.hasClass('.navbar-toggler')) {
+      $('.navbar-toggler').click();
+    }
+  });
+});
+
   //window scroll
   $(window).scroll(function() {
     let position = $(this).scrollTop();
